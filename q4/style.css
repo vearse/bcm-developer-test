@@ -1,0 +1,64 @@
+/*
+  Breakpoint: 48em (768px). 
+  Desktop (>= 48em):  
+*/
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font: 1rem/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1b1f24;
+  background: #fff;
+}
+
+.q4-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  max-width: 70rem;
+  margin-inline: auto;
+}
+
+.q4-layout > section {
+  min-width: 0;
+  padding: 1rem;
+  border: 2px solid #26425f;
+  background: #eaf0f7;
+}
+
+.q4-layout h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.q4-layout a { color: #0b3d91; }
+.q4-layout a:focus-visible { outline: 3px solid #b35900; outline-offset: 2px; }
+
+.q4-block-a { order: 1; }
+.q4-block-d { order: 2; }
+.q4-block-b { order: 3; }
+.q4-block-c { order: 4; }
+.q4-block-g { order: 5; }
+.q4-block-e,
+.q4-block-f,
+.q4-block-h { display: none; }
+
+@supports (reading-flow: grid-order) {
+  .q4-layout { reading-flow: grid-order; }
+}
+
+@media (min-width: 48em) {
+  .q4-layout {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    reading-flow: normal;
+  }
+  .q4-layout > section { order: 0; }
+  .q4-block-a { grid-column: span 2; }
+  .q4-block-e,
+  .q4-block-f,
+  .q4-block-h { display: block; }
+}

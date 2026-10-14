@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q10 REST endpoint</title>
+  <style>
+    body { margin: 0; font: 1rem/1.5 system-ui, sans-serif; color: #222; background: #fafafa; }
+    main { max-width: 40rem; margin: 2rem auto; padding: 0 1rem; }
+    p { background: #fff; padding: 1rem 1.25rem; border: 1px solid #ddd; border-radius: 6px; }
+    code { font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Question 10</h1>
+    <p><code>endpoint.php</code> is a <strong>WordPress must-use plugin</strong>, not a page you open in the browser. Copy it into <code>wp-content/mu-plugins/</code> (same install as this <code>bcm-test</code> folder), then call <code>POST /wp-json/bcm/v1/articles/{post_id}/status</code> with JSON <code>{"status":"draft"|"pending"|"publish"}</code> while logged in and sending a valid <code>X-WP-Nonce</code>. Try a Contributor publishing a draft and an unauthenticated request; both should be rejected. Details are in <code>../answers.md</code>.</p>
+  </main>
+</body>
+</html>
